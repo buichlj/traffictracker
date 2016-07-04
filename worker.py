@@ -44,15 +44,15 @@ def run_threaded(job_func):
 def test_job():
 	print("TEST TEST TEST")
 
-def upload_file():
-	times = []
-	with open('times.csv') as f:
-		times = f.readlines()
-	for time in times:
-		time = time.rstrip()
-		time = time.split(',')
-		data = {'address':time[0]+time[1]+time[2], 'time':time[3], 'Cassie':time[5], 'Joey':time[7]}
-		r = requests.post('localhost:8000', data=data)
+# def upload_file():
+# 	times = []
+# 	with open('times.csv') as f:
+# 		times = f.readlines()
+# 	for time in times:
+# 		time = time.rstrip()
+# 		time = time.split(',')
+# 		data = {'address':time[0]+time[1]+time[2], 'time':time[3], 'Cassie':time[5], 'Joey':time[7]}
+# 		r = requests.post('localhost:8000', data=data)
 
 def schedule_tasks():
 	hours = 5
@@ -82,10 +82,10 @@ def schedule_tasks_test():
 		hours += 1
 	#schedule.every().day.at('22:03').do(run_threaded,test_job)
 
-#schedule_tasks()
+schedule_tasks()
 #schedule_tasks_test()
 #find_traffic(5, 69)
-upload_file()
+#upload_file()
 while True:
 	schedule.run_pending()
 	time.sleep(30)
