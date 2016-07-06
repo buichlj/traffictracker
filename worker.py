@@ -72,8 +72,8 @@ def schedule_tasks():
 	#schedule.every().day.at('18:00').do(upload_file())
 
 def schedule_tasks_test():
-	hours = 22
-	minutes = 3
+	hours = 18
+	minutes = 0
 	for y in range(0,2):
 		for x in range(0,1):
 			p = partial(find_traffic, hours, minutes)
@@ -83,9 +83,9 @@ def schedule_tasks_test():
 		hours += 1
 	#schedule.every().day.at('22:03').do(run_threaded,test_job)
 
-schedule_tasks()
+#schedule_tasks()
 print(os.getpid())
-#schedule_tasks_test()
+schedule_tasks_test()
 #find_traffic(5, 69)
 #upload_file()
 while True:
