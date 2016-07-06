@@ -35,7 +35,7 @@ def find_traffic(hours, minutes):
 		else:
 			directions_cassie = gmaps.directions(cassie_work, addr)
 			directions_joey = gmaps.directions(joey_work, addr)
-		file.write(str(addr)+','+format_time(hours,minutes)+',Cassie,'+str(directions_cassie[0]['legs'][0]['duration']['value'])+',Joey,'+str(directions_joey[0]['legs'][0]['duration']['value'])+','+day+'\n')
+		file.write(str(addr)+','+format_time(hours,minutes)+',Cassie,'+str(directions_cassie[0]['legs'][0]['duration']['value'])+',Joey,'+str(directions_joey[0]['legs'][0]['duration']['value'])+','+str(day)+'\n')
 	file.close()
 
 def run_threaded(job_func):
